@@ -26,7 +26,7 @@ pipeline {
     }
     stage('cloudformation') {
       steps {
-        cfnUpdate(stack: 'ELStg-${ENV1}', create: true, file: 'CFStack_ELSTG.txt', params: 'PreDns=autoenv-${ENV};EnvName=ELStg-${ENV};ScriptsGitTag=${SCRIPTS};SnGenGitTag=${SNGENERATOR_GIT_TAG};NBLGitTag=${NEARBYLOCATION_GIT_TAG};OpSvrGuiGitTag=${OPSVR_GUI_GIT_TAG};GwFeGitTag=${GWFE_GIT_TAG};CouponsGitTag=${COUPONS_GIT_TAG};AppFeGitTag=${APPFE_GIT_TAG};WsGwFeGitTag=${WS_GW_FE_GIT_TAG};PermissionGitTag=${PERMISSION_GIT_TAG};OpSvrApiGitTag=${OPSVRAPI_GIT_TAG};AuthenticationGitTag=${AUTHENTICATION_GIT_TAG};OpSvrGitTag=${BACKOFFICE_GIT_TAG};DownloadFwVersionsGitTag=${DOWNLOAD_FW_VERSIONS};EncryptMongoHost=${EncryptMongoHost};DownloadFwVersionsGitTag=${DownloadFwVersionsGitTag}', timeoutInMinutes: 900)
+        cfnUpdate(stack: 'ELStg-"${ENV1}"', create: true, file: 'CFStack_ELSTG.txt', params: 'PreDns=autoenv-${ENV1};EnvName=ELStg-${ENV1};ScriptsGitTag=${SCRIPTS};SnGenGitTag=${SNGENERATOR_GIT_TAG};NBLGitTag=${NEARBYLOCATION_GIT_TAG};OpSvrGuiGitTag=${OPSVR_GUI_GIT_TAG};GwFeGitTag=${GWFE_GIT_TAG};CouponsGitTag=${COUPONS_GIT_TAG};AppFeGitTag=${APPFE_GIT_TAG};WsGwFeGitTag=${WS_GW_FE_GIT_TAG};PermissionGitTag=${PERMISSION_GIT_TAG};OpSvrApiGitTag=${OPSVRAPI_GIT_TAG};AuthenticationGitTag=${AUTHENTICATION_GIT_TAG};OpSvrGitTag=${BACKOFFICE_GIT_TAG};DownloadFwVersionsGitTag=${DOWNLOAD_FW_VERSIONS};EncryptMongoHost=${EncryptMongoHost};DownloadFwVersionsGitTag=${DownloadFwVersionsGitTag}', timeoutInMinutes: 900)
       }
     }
   }
