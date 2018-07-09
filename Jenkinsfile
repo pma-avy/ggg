@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('setup') {
       steps {
-        script{properties([parameters([choice(choices: ['61', '62'], description: '', name: 'ENV1')])])}
+        script {
+          properties([parameters([choice(choices: ['61', '62'], description: '', name: 'ENV1')])])
+        }
+
         echo "${ENV1}"
       }
     }
